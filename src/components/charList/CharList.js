@@ -22,7 +22,7 @@ class CharList extends Component {
             .catch(this.onError)
     }
 
-    onCharsListLoaded = (charList) => {
+    onCharListLoaded = (charList) => {
         this.setState({
             charList,
             loading: false
@@ -38,7 +38,7 @@ class CharList extends Component {
 
     renderItems(arr) {
 
-        const items = arr.map((item) => {
+        const items = arr.map(item => {
             let imgStyle = {'objectFit': 'cover'};
             if (item.thumbnail.indexOf('image_not_available') > 0) {
                 imgStyle = {'objectFit': 'unset'};
