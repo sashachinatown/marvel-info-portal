@@ -24,6 +24,14 @@ class CharInfo extends Component {
         }
     }
 
+    componentDidCatch(error, info) {
+        console.log(error);
+        console.log(info);
+        this.setState({
+            error: true
+        })
+    }
+
     updateChar = () => {
         const {charId} = this.props;
         if (!charId) {
@@ -35,6 +43,7 @@ class CharInfo extends Component {
         this.marvelService.getCharacter(charId)
             .then(this.onCharLoaded)
             .catch(this.onError)
+
     }
 
     onCharLoaded = (char) => {
