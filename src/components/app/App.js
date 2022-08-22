@@ -9,7 +9,7 @@ import decoration from '../../resources/img/vision.png';
 
 const App = () => {
     
-    const [selectedChar, setChar] = useState(null);
+    const [selectedChar, setChar] = useState({});
 
     const onCharSelected = (id) => {
         setChar(id);
@@ -22,14 +22,14 @@ const App = () => {
                 <ErrorBoundary>
                     <RandomChar/>
                 </ErrorBoundary>
-                <div className="char__content">
+                {/* <div className="char__content">
                     <ErrorBoundary>
                         <CharList onCharSelected={onCharSelected}/>
                     </ErrorBoundary>
                     <ErrorBoundary>
                         <CharInfo charId={selectedChar}/>
                     </ErrorBoundary>
-                </div>
+                </div> */}
                 <img className="bg-decoration" src={decoration} alt="vision"/>
             </main>
         </div>
